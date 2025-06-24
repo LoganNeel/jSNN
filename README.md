@@ -48,3 +48,12 @@ This roadmap outlines planned milestones for jSNN. The timeline may evolve based
 | 1.0.0   | Stable release with examples and full documentation     | ⏳ Future    |
 
 ---
+
+## 💖 Support This Project
+
+If you find jSNN cool or want to support its continued development, consider sponsoring:
+
+👉 [GitHub Sponsors](https://github.com/sponsors/LoganNeel)
+
+Your support helps fund further development, optimization, and features, as I am a solo developer doing this for the love of the game.
+
