@@ -1,1 +1,1 @@
-rootProject.name = "jSNN2"
+rootProject.name = "jSNN"

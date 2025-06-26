@@ -1,16 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.AnchorPane?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="jsnn.jsnn.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
-
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="jsnn.jsnn.viewModels.MainViewModel">
+    <MenuBar>
+        <Menu text="File">
+            <MenuItem text="Open"/>
+            <MenuItem text="Exit"/>
+        </Menu>
+        <Menu text="Edit"/>
+    </MenuBar>
+    <SplitPane VBox.vgrow="ALWAYS">
+        <AnchorPane fx:id="contextPane" maxWidth="350" minWidth="200" >
+            <Label text="Left Pane"/>
+        </AnchorPane>
+        <AnchorPane>
+            <Label text="Right Pane"/>
+        </AnchorPane>
+    </SplitPane>
 </VBox>

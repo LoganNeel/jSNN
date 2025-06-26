@@ -1,0 +1,19 @@
+.menu-bar {
+    -fx-background-color: #5d646a;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+}
+
+.split-pane {
+    -fx-background-color: #ecf0f1;
+}
+
+.menu{
+    -fx-text-fill: black;
+    -fx-font-size: 14px;
+}
+
+#contextPane{
+    -fx-background-color: #bdc3c7;
+    -fx-padding: 10px;
+}

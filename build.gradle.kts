@@ -19,8 +19,6 @@ java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(23)
     }
-    sourceCompatibility = JavaVersion.VERSION_23
-    targetCompatibility = JavaVersion.VERSION_23
 }
 
 tasks.withType<JavaCompile> {
@@ -28,8 +26,8 @@ tasks.withType<JavaCompile> {
 }
 
 application {
-    mainModule.set("jsnn.jsnn2")
-    mainClass.set("jsnn.jsnn2.HelloApplication")
+    mainModule.set("jsnn.jsnn")
+    mainClass.set("jsnn.jsnn.MainApplication")
 }
 
 javafx {
