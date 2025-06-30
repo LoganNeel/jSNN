@@ -1,10 +1,13 @@
 package jsnn.jsnn.views;
 
-import javafx.scene.control.Label;
-import javafx.scene.layout.Priority;
-import javafx.scene.layout.VBox;
+
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.layout.Pane;
+
 import javafx.scene.Node;
+import javafx.scene.paint.Color;
 import jsnn.jsnn.viewModels.ScenePaneViewModel;
+import javafx.scene.canvas.Canvas;
 
 /**
  * The `ScenePaneView` class represents the view for a single scene pane.
@@ -18,9 +21,9 @@ public class ScenePaneView {
     private final ScenePaneViewModel viewModel;
 
     /**
-     * The root `VBox` container for this scene pane's UI components.
+     * The root `Canvas` container for this scene pane's UI components.
      */
-    private final VBox root;
+    private final Canvas root;
 
     /**
      * Constructs a new `ScenePaneView` instance with the specified view model.
@@ -29,9 +32,29 @@ public class ScenePaneView {
      */
     public ScenePaneView(ScenePaneViewModel viewModel) {
         this.viewModel = viewModel;
-        this.root = new VBox();
-        // VBox.setVgrow(root, Priority.ALWAYS); // Uncomment if vertical growth is needed
-        root.getChildren().add(new Label("Hello from ScenePaneView!"));
+        // Initialize the root container for this scene pane
+        this.root = new Canvas();
+
+         //set the size of the canvas
+        this.root.setWidth(800); // Default width
+        this.root.setHeight(600); // Default height
+
+        // Draw the initial content of the scene
+        draw();
+
+    }
+
+    private void draw() {
+        GraphicsContext gc = root.getGraphicsContext2D();
+        gc.clearRect(0, 0, root.getWidth(), root.getHeight());
+
+        // Example: Draw a neuron and a connection
+        gc.setFill(Color.CORNFLOWERBLUE);
+        gc.fillOval(100, 100, 30, 30);
+
+        gc.setStroke(Color.GRAY);
+        gc.setLineWidth(2);
+        gc.strokeLine(130, 115, 200, 115);
     }
 
     /**
@@ -50,6 +73,6 @@ public class ScenePaneView {
      * @return The root `Node` of this scene pane.
      */
     public Node getRoot() {
-        return root;
+        return  root;
     }
 }

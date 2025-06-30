@@ -8,19 +8,30 @@
 
 <StackPane xmlns:fx="http://javafx.com/fxml"
            fx:controller="jsnn.jsnn.views.PaneHolderView">
-    <VBox StackPane.alignment="CENTER">
+
+    <!-- Main layout pane, vertically stacks content -->
+    <VBox StackPane.alignment="CENTER"
+          fillWidth="true">
+
+        <!-- This grows to fill the VBox -->
         <TabPane fx:id="tabPane"
                  VBox.vgrow="ALWAYS"/>
     </VBox>
 
+    <!-- Overlay pane, centered, hidden by default -->
     <VBox fx:id="AddPaneStack"
           visible="false"
           alignment="CENTER"
+          StackPane.alignment="CENTER"
           styleClass="centered-vbox">
+
         <Label text="Click + to add a new SNN module" />
+
         <Button text="+"
                 style="-fx-font-size: 32px;"
                 onAction="#onAddPaneClicked"
                 StackPane.alignment="CENTER"/>
     </VBox>
 </StackPane>
+
+

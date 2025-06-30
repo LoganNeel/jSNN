@@ -37,11 +37,21 @@
         </Menu>
     </MenuBar>
     <SplitPane VBox.vgrow="ALWAYS">
-        <AnchorPane fx:id="contextPane" maxWidth="350" minWidth="200" >
+
+        <!-- Left pane (fixed-width sidebar) -->
+        <AnchorPane fx:id="contextPane" maxWidth="350" minWidth="200">
             <fx:include source="selected-item-view.fxml"/>
         </AnchorPane>
+
+        <!-- Right pane (main content area) -->
         <AnchorPane>
-            <fx:include source="pane-holder.fxml"/>
+            <fx:define>
+                <fx:include fx:id="paneHolder" source="pane-holder.fxml"/>
+            </fx:define>
+            <!-- Anchor the included content to fill the pane -->
+            <fx:reference source="paneHolder" AnchorPane.topAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"/>
         </AnchorPane>
+
     </SplitPane>
+
 </VBox>
