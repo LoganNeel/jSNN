@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="jsnn.jsnn.viewModels.MainViewModel">
+    <MenuBar>
+        <Menu text="File">
+            <MenuItem text="New Project"/>
+            <MenuItem text="Open Project"/>
+            <MenuItem text="Import Module"/>
+            <MenuItem text="Save"/>
+            <MenuItem text="Save As..."/>
+        </Menu>
+        <Menu text="Edit">
+            <MenuItem text="Undo"/>
+            <MenuItem text="Redo"/>
+        </Menu>
+        <Menu text="Network">
+            <Menu text="Neurons">
+                <MenuItem text="Add Neuron"/>
+                <MenuItem text="Add Bulk"/>
+                <MenuItem text="Remove Neuron"/>
+            </Menu>
+            <Menu text="Synapses">
+                <MenuItem text="Add Synapses"/>
+                <MenuItem text="Random Generation"/>
+                <MenuItem text="Prune Synapses"/>
+            </Menu>
+
+        </Menu>
+    </MenuBar>
+    <SplitPane VBox.vgrow="ALWAYS">
+        <AnchorPane fx:id="contextPane" maxWidth="350" minWidth="200" >
+            <fx:include source="selected-item-view.fxml"/>
+        </AnchorPane>
+        <AnchorPane>
+            <fx:include source="pane-holder.fxml"/>
+        </AnchorPane>
+    </SplitPane>
+</VBox>

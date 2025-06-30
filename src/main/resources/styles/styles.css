@@ -1,0 +1,4 @@
+.centered-vbox {
+    -fx-alignment: center;
+    -fx-spacing: 10;
+}

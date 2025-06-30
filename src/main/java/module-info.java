@@ -9,6 +9,8 @@ module jsnn.jsnn {
 
     opens jsnn.jsnn to javafx.fxml;
     exports jsnn.jsnn;
+    exports jsnn.jsnn.views to javafx.fxml;
+    opens jsnn.jsnn.views to javafx.fxml;
     exports jsnn.jsnn.viewModels;
     opens jsnn.jsnn.viewModels to javafx.fxml;
 }
